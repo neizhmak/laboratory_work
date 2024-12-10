@@ -1,0 +1,149 @@
+\documentclass{article} % указываем класс документа
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english, russian]{babel}  %  пакет для многоязычной верстки
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{setspace,amsmath} % добавляем математические формулы
+\usepackage{graphicx} % добавляем изображения
+\usepackage{epsfig, euscript}
+\usepackage{caption2} % делаем подписи к обьектам (рисунки, таблицы)
+\usepackage{bibentry} % пакет необходим для использования возможностей BibTex
+\usepackage[a4paper]{geometry} % устанавливаем размер полей на странице
+\geometry{top=2.0cm}
+\geometry{bottom=2.0cm}
+\geometry{left=2.0cm}
+\geometry{right=2.0cm}
+\geometry{footskip=1.0cm}
+
+\title{Отчет по лабораторной работе №~7}
+\author{ФИО} % здесь укажите свои ФИО
+\date{ }
+
+
+\begin{document}
+
+\maketitle % команда генерирует титульный лист, с применением данных
+% об авторе, названии работы и др., указанных в преамбуле
+
+\tableofcontents % команда генерирует содержание документа из команд
+% секционарования
+
+\newpage
+
+\section{Набор текста и нумерованных/маркированных списков}
+
+Вставьте сюда несколько абзацев текста.
+
+Нумерованный список:
+\begin{enumerate} % окружение создает нумерованный список
+  \item Создайте нумерованный список любого содержания.
+  \item Спосок должен содержать не менее 5 пунктов.
+  \item Измените способ нумерации.
+\end{enumerate}
+
+Маркированный список:
+\begin{itemize}% окружение создает маркированный список
+  \item Создайте маркированный список любого содержания.
+  \item Спосок должен содержать не менее 5 пунктов.
+  \item Измените тип маркеров.
+\end{itemize}
+
+\section{Добавление рисунков и подписей к ним}
+
+%\begin{figure}[!h]
+%  \center{\includegraphics[width=0.5\linewidth]{name}}% файл с
+% рисунком должен находиться в той же директории, что и tex-файл,
+% при этом в случае использования команды latex должен быть файл ps
+% или eps, при использовании команды pdflatex - png или jpg
+%  \caption{Добавьте подпись к вашему рисунку } % подпись к рисунку
+%  \label {fig_1} % добавляем метку для дальнейшей ссылки на этот рисунок
+%\end{figure}
+
+
+\section{Добавление формул}
+
+\begin{equation}\label{eq_1} % добавляем метку для дальнейшей ссылки
+  % на эту формулу
+  % здесь наберите любую формулу
+  f(x) = \frac{A_0}{2} + \sum \limits_{n=1}^{\infty} A_n \cos \left(
+  \frac{2 n \pi x}{\nu} - \alpha_n \right)
+\end{equation}
+
+\section{Добавление таблиц и подписей к ним}
+
+\begin{table}[!h] % выполните набор любой таблицы из лабораторной работы 3
+  \centering % центрирование объекта
+  \caption{Добавьте подпись к вашей таблице} \label{tab_1} %
+  % добавляем метку для дальнейшей ссылки на эту таблицу
+  \begin{tabular}{ |l|r|c| } % укажите количество столбцов в вашей
+    % таблице и способ выравнивания текста в них
+    \hline
+    cell1 & cell2 & cell3 \\
+    \hline
+    cell4 & cell5 & cell6 \\
+    \hline
+    cell7 & cell8 & cell9 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\section{Добавление перекрестных ссылок на объекты и библиографические описания}
+
+В научных статьях, книгах и различных отчетах принято ввылаться на
+источники, которые вы цитируете или в которых то, о чем вы пишете в
+своем тексте, раскрыто более подробно. Также принято ссылаться на
+статьи или другие источники, содержащие описание каких-либо
+исследований в литературных обзорах для подкрепления ваших слов. В
+сислеме \LaTeX{} есть набор средств, позволяющий выполнять
+цитирование, в первую очередь это команда \cite{Harrison_Cosmology},
+\cite{Michie2009}, \cite{Barchi_2020}, \cite{Lee2016}, более подробно
+мы похзнакомимся с принципами работы с ней в следующей лабораторной работе.
+
+Также принято ссылаться в тексте на рисунки, таблицы, формулы и
+листинги программ, для этого все объекты должны иметь метку с
+уникальным именем, при вызове команды для выполнения перекрестных
+ссылок, вы подставляете в аргумент команды уникальную метку и
+\LaTeX{} проставляет нужный номер автоматичски. Ссылки выполняются
+следующим образом:
+\begin{itemize}
+  \item Ссылка на рисунок \ref{fig_1}.
+  \item Ссылка на таблицу \ref{tab_1}.
+  \item ссылка на формулу \eqref{eq_1}.
+\end{itemize}
+
+\addcontentsline{toc}{section}{Литература} % эта команда добавляет
+% строку, соответствующую списку литературы в содержание
+
+%\bibliographystyle{gost780s}
+%\bibliography{name}
+
+\begin{thebibliography}{1} % окружение, формирующее список
+  % библиографических описаний источников
+  \bibitem{Harrison_Cosmology}
+  {Harrison,~E.} Cosmology: The Science of the Universe~/ E.~Harrison.
+  "---
+  \newblock USA: Cambridge University Press, March 16, 2000.
+
+  \bibitem{Lee2016}
+  {Lee,~C.-Y.} Generalizing pooling functions in convolutional neural
+  networks: Mixed, gated, and tree. "---
+  \newblock 2015.
+
+  \bibitem{Barchi_2020}
+  Machine and deep learning applied to galaxy morphology - a comparative study~/
+  P.~Barchi, R.~de~Carvalho, R.~Rosa et~al.~// {Astronomy and
+  Computing}. "---
+  \newblock 2020. "---
+  \newblock Vol.~30. "---
+  \newblock P.~100334.
+
+  \bibitem{Michie2009}
+  Machine Learning, Neural and Statistical Classification~/ Ed. by D.~Michie,
+  D.~J.~Spiegelhalter, C.~C.~Taylor, J.~Campbell. "---
+  \newblock USA: Ellis Horwood, 1995.
+
+\end{thebibliography}
+
+
+\end{document}

@@ -1,0 +1,29 @@
+{
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:debian",
+    "features": {
+        "ghcr.io/meaningful-ooo/devcontainer-features/fish:1": {}
+    },
+    "hostRequirements": {
+        "cpus": 2
+    },
+    "waitFor": "onCreateCommand",
+    "postCreateCommand": "sudo apt update && sudo apt upgrade -y && sudo apt install -y texlive-full",
+    "postStartCommand": {
+        "apt_update": "sudo apt update && sudo apt upgrade -y",
+        "tex-fmt_update": "wget https://github.com/WGUNDERWOOD/tex-fmt/releases/latest/download/tex-fmt-x86_64-linux.tar.gz && tar -xzf tex-fmt-x86_64-linux.tar.gz && sudo mv tex-fmt /usr/local/bin/ && rm -rf tex-fmt-x86_64-linux.tar.gz"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "James-Yu.latex-workshop"
+            ],
+            "settings": {
+                "[latex]": {
+                    "editor.defaultFormatter": "James-Yu.latex-workshop"
+                },
+                "latex-workshop.formatting.latex": "tex-fmt",
+                "latex-workshop.formatting.tex-fmt.args": []
+            }
+        }
+    }
+}
